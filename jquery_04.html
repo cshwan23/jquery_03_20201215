@@ -1,0 +1,93 @@
+<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jquery_04.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    => 특정 행을 보이거나 사라지게 한다.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+        //----------------------------------
+        // $(document).ready( function(){ 자스코딩 });
+        // $.ready( function(){ 자스코딩 });
+        // $(function(){ 자스코딩 });
+        //----------------------------------
+        $(document).ready( function(){ 
+
+            //----------------------------------
+            // id=movieList 를 가진 태그를 관리하는 JQuery 객체의 메위주를 변수 obj에 저장
+            //----------------------------------
+            var obj = $("#movieList");
+
+            //----------------------------------
+            // JQuery 객체를 관리하는 태그의 후손 태그 중 짝수 tr 을 관리하는 JQuery 객체 생성하고
+            // hide 메소드 호출하여 짝수행 감추기
+            //----------------------------------
+            obj.find("tr:odd").hide();
+
+            //----------------------------------
+            // JQuery 객체를 관리하는 태그의 후손 태그 중 짝수 tr 을 관리하는 JQuery 객체 생성하고
+            // hover 메소드 호출하여 마우스 댔을 때 홀수 tr 보이게 하고
+            //                   마우스 빼면 홀수 tr 감추기
+            //---------------------------------- 
+            obj.find("tr:even").hover(
+                function(){
+
+                    // 홀수 tr에 마우스 대면 마우스 댄 tr의 다음 tr만 보이기
+                    $(this).next().show()
+
+                }
+                ,function(){
+
+                    // 홀수 tr에 마우스 빼면 마우스 댄 tr의 다음 tr만 숨기기
+                    $(this).next().hide();//시각적으로만 감춤(=hide) 존재함.
+
+                });
+        });
+
+
+
+        
+    </script>
+</head>
+<body>
+    <table id="movieList" class="movie" border="0" cellpadding="5" width="200" cellspacing="0">
+        <tr bgcolor=#da1358>
+            <td><b>로맨틱코미디</b></td>
+        </tr>
+
+        <tr bgcolor=#EEEEEE>
+            <td>&nbsp;&nbsp;&nbsp;건축학개론<br>
+                &nbsp;&nbsp;&nbsp;애인있어요<br>
+                &nbsp;&nbsp;&nbsp;500일의썸머
+            </td>
+        </tr>
+        <tr bgcolor=#f2b008>
+            <td><b>전쟁</b></td>
+        </tr>
+
+        <tr bgcolor=#EEEEEE>
+            <td>&nbsp;&nbsp;&nbsp;태극기휘날리며<br>
+                &nbsp;&nbsp;&nbsp;포화속으로<br>
+                &nbsp;&nbsp;&nbsp;공동경비구역JSA
+            </td>
+        </tr>
+
+        <tr bgcolor=#5131f4>
+            <td><b>드라마</b></td>
+        </tr>
+
+        <tr bgcolor=#EEEEEE>
+            <td>&nbsp;&nbsp;&nbsp;달의연인<br>
+                &nbsp;&nbsp;&nbsp;미스터션샤인<br>
+                &nbsp;&nbsp;&nbsp;뷰티풀마인드
+            </td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>

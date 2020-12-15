@@ -1,0 +1,36 @@
+<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jquery_05.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    => 라디오 버튼 같은 checkbox 를 만들어보자
+    => checkbox 모양이지만 단일 선택만 가능하고 단일 선택된 checkbox는 체크가 풀린다.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+
+        //$(document).ready(function(){자스코딩});
+        $(document).ready(function(){
+
+            // name="hobby" 를 가진 태그에 change 이벤트가 발생하면 실행할 자스코드 설정하기
+            $("[name=hobby]").change(function(){
+
+                // 제이쿼리 메소드 중 형제를 고르는 메소드가 있다.
+                alert("선택했냐");
+            });
+
+        });
+
+    </script>
+</head>
+<body><center>
+    <input type="checkbox" name="hobby" value="독서">독서<br>
+    <input type="checkbox" name="hobby" value="운동">운동<br>
+    <input type="checkbox" name="hobby" value="여행">여행<br>
+    <input type="checkbox" name="hobby" value="수집">수집
+    
+</body>
+</html>
